@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-image: url("../images/3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* لجعل العنوان والفورم عمودي */
+}
+
+.container {
+    width: 900px; /* قللت عرض البوكس */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    text-shadow: 0 5px 15px rgb(232, 7, 7);
+    margin-bottom: 90px; /* مسافة مناسبة بين العنوان والفورم */
+    margin-top: 70px;
+    color: azure;
+    font-size: 70px; /* حجم مناسب للبوكس */
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-clip: text;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 500px;
+}
+
+input[type="password"] {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(231, 27, 27, 0.751);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(194, 11, 11, 0.2);
+}
+
+input[type="password"]:focus {
+    outline: none;
+    background: rgba(215, 22, 22, 0.356);
+    box-shadow: 0 0 10px rgba(223, 23, 23, 0.267);
+    border: 1px solid rgba(231, 88, 53, 0.5);
+}
+
+input[type="password"]::placeholder {
+    color: #d7d6d6d0;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #862222, #d11010);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 126, 95, 0.6);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.result {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    background: #f30909b5;
+    color: rgba(249, 245, 245, 0.993);
+    width:460px ;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.result.weak {
+    background: #ff6b6b;
+}
+
+.result.medium {
+    background: #ffd93d;
+    color: #333;
+}
+
+.result.strong {
+    background: #6bcf7f;
+}
+/* بداية Media Queries لتناسب جميع الشاشات */
+
+/* للشاشات الصغيرة (الهواتف) */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%; /* البوكس يملأ تقريبًا كامل الشاشة */
+        padding: 0 10px;
+    }
+
+    h2 {
+        font-size: 40px; /* تصغير حجم العنوان */
+        margin-bottom: 40px; /* تقليل المسافة بين العنوان والفورم */
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .form-section form {
+        width: 100%; /* الفورم يملأ كامل البوكس */
+    }
+
+    .result {
+        width: 100%; /* عرض النتيجة يملأ البوكس */
+        font-size: 16px; /* تصغير حجم النص */
+    }
+}
+
+/* للشاشات المتوسطة (التابلت) */
+@media screen and (max-width: 900px) and (min-width: 601px) {
+    .container {
+        width: 80%; /* عرض البوكس أصغر من الكمبيوتر */
+    }
+
+    h2 {
+        font-size: 55px;
+        margin-bottom: 60px;
+    }
+
+    .form-section form {
+        width: 100%;
+    }
+
+    .result {
+        width: 100%;
+    }
+}
+
+/* للشاشات الكبيرة (الكمبيوتر) */
+@media screen and (min-width: 901px) {
+    .container {
+        width: 900px;
+    }
+
+    h2 {
+        font-size: 70px;
+        margin-bottom: 90px;
+        margin-top: 70px;
+    }
+
+    .form-section form {
+        width: 500px;
+    }
+
+    .result {
+        width: 460px;
+    }
+}
+
+/* نهاية Media Queries */
